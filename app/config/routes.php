@@ -53,13 +53,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | /student/profile  -> StudentController::profile  (protected by StudentMiddleware)
 | /student/logout   -> StudentController::logout   (revokes access, for testing)
 */
-require_once APP_DIR . 'middlewares/StudentMiddleware.php';
-get_config([
-       'middlewares' => array_merge(
-              get_config()['middlewares'] ?? [],
-              ['student.access' => new StudentMiddleware()]
-       ),
-]);
 
 $router->get('/', 'StudentController::index');
 
