@@ -13,7 +13,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-image:
                 linear-gradient(rgba(7, 88, 66, 0.64), rgba(7, 88, 66, 0.64)),
-                url('<?= base_url('assets/images/banner_1.jpg') ?>');
+                url('<?= base_url('assets/images/student_banner.jpg') ?>');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
