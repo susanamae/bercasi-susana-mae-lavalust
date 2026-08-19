@@ -79,7 +79,10 @@ $config['environment'] = getenv('APP_ENV') ?: 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] 				= 'http://localhost/LavaLust/public';
+$config['base_url']                 = rtrim(
+	getenv('APP_URL') ?: getenv('RENDER_EXTERNAL_URL') ?: 'http://localhost/LavaLust/public',
+	'/'
+);
 
 /*
 |--------------------------------------------------------------------------
