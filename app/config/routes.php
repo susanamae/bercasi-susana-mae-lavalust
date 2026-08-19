@@ -44,4 +44,28 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 */
 /** @var object $router **/
 
-$router->get('/', 'Welcome::index');
+/*
+| -------------------------------------------------------------------
+| Student Information Page routes
+| -------------------------------------------------------------------
+| /                 -> StudentController::index    (landing page = student home)
+| /student          -> StudentController::index    (same home page, alt URL)
+| /student/profile  -> StudentController::profile  (protected by StudentMiddleware)
+| /student/logout   -> StudentController::logout   (revokes access, for testing)
+*/
+require_once APP_DIR . 'middlewares/StudentMiddleware.php';
+get_config([
+       'middlewares' => array_merge(
+              get_config()['middlewares'] ?? [],
+              ['student.access' => new StudentMiddleware()]
+       ),
+]);
+
+$router->get('/', 'StudentController::index');
+
+$router->get('/student', 'StudentController::index');
+
+$router->get('/student/profile', 'StudentController::profile')
+       ->middleware('student.access');
+
+$router->get('/student/logout', 'StudentController::logout');
