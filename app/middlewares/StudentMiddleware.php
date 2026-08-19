@@ -39,7 +39,7 @@ class StudentMiddleware
         }
 
         // Access denied -> flash a message and redirect to the student home page
-        $_SESSION['student_access_message'] = "Access denied: please open the Student Home page first before viewing the profile.";
+        $_SESSION['student_access_message'] = "Access denied: Please log in first to view your profile.";
 
         $target = rtrim(BASE_URL, '/') . '/';
 

@@ -22,7 +22,7 @@ class StudentController extends Controller
         'year'        => '3RD Year',
         'section'     => '3F1',
         'email'       => 'susanamaegardocebercasi@gmail.com',
-        'address'     => 'Bancuro,Naujan,Oriental Mindoro, Philippines',
+        'address'     => 'Bancuro, Naujan, Oriental Mindoro, Philippines',
         'contact'     => '09484687984',
         'hobbies'     => 'Photography',
         'description' => 'A goal oriented person working hard to build the life she has always envisioned.',
